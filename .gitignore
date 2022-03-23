@@ -1,1 +1,4 @@
-*main
+*.a
+*.d
+*.o
+bin/chessviz
