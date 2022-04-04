@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-char init_desk[8][8] 
+char init_desk[8][8]
         = {{'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'},
            {'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'},
            {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
