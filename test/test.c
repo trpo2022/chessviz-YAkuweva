@@ -116,7 +116,7 @@ CTEST(Moving, checkpeshka) // Тест белой пешки
     ASSERT_EQUAL(exp5, c5);
     ASSERT_EQUAL(exp6, c6);
 
-    desk[8][8] = init_desk[8][8];
+ //   desk[8][8] = init_desk[8][8];
 }
 
 //-------------------------------------------------------------
@@ -242,7 +242,7 @@ CTEST(Moving, checkladya) // Тест ладьи
     ASSERT_EQUAL(exp6, c6);
     ASSERT_EQUAL(exp7, c7);
 
-    desk[8][8] = init_desk[8][8];
+  //  desk[8][8] = init_desk[8][8];
 }
 
 //-------------------------------------------------------------
@@ -339,7 +339,7 @@ CTEST(Moving, checkhorse) // Тест horse
     ASSERT_EQUAL(exp9, c9);
     ASSERT_EQUAL(exp10, c10);
 
-    desk[8][8] = init_desk[8][8];
+   // desk[8][8] = init_desk[8][8];
 }
 
 //-------------------------------------------------------------
@@ -399,7 +399,7 @@ CTEST(Moving, checkelephant) // Тест elephant
     ASSERT_EQUAL(exp5, c5);
     ASSERT_EQUAL(exp6, c6);
 
-    desk[8][8] = init_desk[8][8];
+  //  desk[8][8] = init_desk[8][8];
 }
 
 //-------------------------------------------------------------
@@ -482,5 +482,5 @@ CTEST(Moving, checkking) // Тест короля
     ASSERT_EQUAL(exp8, c8);
     ASSERT_EQUAL(exp9, c9);
 
-    desk[8][8] = init_desk[8][8];
+   // desk[8][8] = init_desk[8][8];
 }
