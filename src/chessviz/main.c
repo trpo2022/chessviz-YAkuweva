@@ -1,21 +1,49 @@
-#include "libchessviz/print.h"
-#include "read_move.h"
+#include "libchessviz/board.h"
+#include "libchessviz/board_print_plain.h"
+#include <stdio.h>
+
+char init_desk[8][8] = {{'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'},
+                        {'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'},
+                        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+                        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+                        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+                        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+                        {'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'},
+                        {'R', 'N', 'B', 'K', 'Q', 'B', 'N', 'R'}};
+
+char desk[8][8] = {{'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'},
+                   {'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'},
+                   {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+                   {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+                   {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+                   {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+                   {'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'},
+                   {'R', 'N', 'B', 'K', 'Q', 'B', 'N', 'R'}};
 
 int main()
 {
-    int turnsc = 0;
-    int finish = 0;
-    char board[9][9]
-            = {{'8', 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'},
-               {'7', 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'},
-               {'6', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-               {'5', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-               {'4', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-               {'3', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-               {'2', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'},
-               {'1', 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'},
-               {' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'}};
-    printf("Input format: char int char char inr like e2-e4. \n");
-    print(board);
-    read_move(board, finish, turnsc);
+    char p[5];
+    int b[5];
+    int s = 0;
+
+    clear();
+    printf("Zdravstvuite\n\nWhite (big)\n\n");
+
+    while (1) {
+        print_desk();
+        input(p, b);
+        clear();
+
+        while (!check_input(b, p) || !check_figure_move(b) || !Player(b, s)) {
+            printf("Error..\n\n");
+            print_desk();
+            printf("\n");
+            input(p, b);
+            clear();
+        }
+
+        move(b);
+        s++;
+    }
 }
+
